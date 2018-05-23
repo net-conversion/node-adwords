@@ -62,6 +62,33 @@ class AdwordsReport {
         });
     }
 
+  /**
+   * Get a report request for using as a stream
+   * @access public
+   * @param apiVersion {string} the version in the api
+   * @param report {object} the report object
+   * @returns {Promise<any>} request object
+   */
+    getReportRequest(apiVersion, report) {
+      report = report || {};
+      apiVersion = apiVersion || AdwordsConstants.DEFAULT_ADWORDS_VERSION;
+
+      return new Promise((resolve, reject) => {
+          return this.getHeaders(report.additionalHeaders, (error, headers) => {
+              if (error) {
+                  return reject(error);
+              }
+              return resolve(headers);
+          })
+      })
+        .then(headers => request({
+          uri: 'https://adwords.google.com/api/adwords/reportdownload/' + apiVersion,
+          method: 'POST',
+          headers: headers,
+          form: this.buildReportBody(report)
+        }))
+    }
+
     /**
      * Determines if the body contains an error message
      * @param report {object} the report object
