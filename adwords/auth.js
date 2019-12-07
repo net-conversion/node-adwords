@@ -1,7 +1,7 @@
 'use strict';
 
-var google = require('googleapis');
-var OAuth2 = google.auth.OAuth2;
+const {OAuth2Client} = require('google-auth-library');
+
 
 class AdwordsAuth {
 
@@ -10,7 +10,7 @@ class AdwordsAuth {
      */
     constructor(credentials, redirectUrl) {
         this.credentials = credentials;
-        this.oauth2Client = new OAuth2(
+        this.oauth2Client = new OAuth2Client(
             this.credentials.client_id,
             this.credentials.client_secret,
             redirectUrl

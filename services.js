@@ -81,6 +81,14 @@ module.exports = {
 			'mutate'
 		]
 	},
+	'AdService': {
+		'xmlns': 'https://adwords.google.com/api/adwords/cm/{{version}}',
+		'wsdl': 'https://adwords.google.com/api/adwords/cm/{{version}}/AdService?wsdl',
+		'methods': [
+			'get',
+			'mutate'
+		]
+	},
 	'AdwordsUserListService': {
 		'xmlns': 'https://adwords.google.com/api/adwords/rm/{{version}}',
 		'wsdl': 'https://adwords.google.com/api/adwords/rm/{{version}}/AdwordsUserListService?wsdl',
@@ -89,6 +97,14 @@ module.exports = {
 			'mutate',
 			'mutateMembers',
 			'query'
+		]
+	},
+	'AssetService': {
+		'xmlns': 'https://adwords.google.com/api/adwords/cm/{{version}}',
+		'wsdl': 'https://adwords.google.com/api/adwords/cm/{{version}}/AssetService?wsdl',
+		'methods': [
+			'get',
+			'mutate'
 		]
 	},
 	'BatchJobService': {
@@ -127,7 +143,7 @@ module.exports = {
 			'query'
 		]
 	},
-	'CampaignBidModifierService': {
+	'CampaignGroupService': {
 		'xmlns': 'https://adwords.google.com/api/adwords/cm/{{version}}',
 		'wsdl': 'https://adwords.google.com/api/adwords/cm/{{version}}/CampaignGroupService?wsdl',
 		'methods': [
@@ -223,6 +239,16 @@ module.exports = {
 			'query'
 		]
 	},
+	'CustomAffinityService': {
+		'xmlns': 'https://adwords.google.com/api/adwords/rm/{{version}}',
+		'wsdl': 'https://adwords.google.com/api/adwords/rm/{{version}}/CustomAffinityService?wsdl',
+		'methods': [
+			'get',
+			'mutate',
+			'mutateToken',
+			'query'
+		]
+	},
 	'CustomerExtensionSettingService': {
 		'xmlns': 'https://adwords.google.com/api/adwords/cm/{{version}}',
 		'wsdl': 'https://adwords.google.com/api/adwords/cm/{{version}}/CustomerExtensionSettingService?wsdl',
@@ -255,7 +281,9 @@ module.exports = {
 		'wsdl': 'https://adwords.google.com/api/adwords/mcm/{{version}}/CustomerService?wsdl',
 		'methods': [
 			'getCustomers',
-			'mutate'
+			'getServiceLinks',
+			'mutate',
+			'mutateServiceLinks'
 		]
 	},
 	'CustomerSyncService': {
@@ -373,6 +401,13 @@ module.exports = {
 	'OfflineCallConversionFeedService': {
 		'xmlns': 'https://adwords.google.com/api/adwords/cm/{{version}}',
 		'wsdl': 'https://adwords.google.com/api/adwords/cm/{{version}}/OfflineCallConversionFeedService?wsdl',
+		'methods': [
+			'mutate'
+		]
+	},
+	'OfflineConversionAdjustmentFeedService': {
+		'xmlns': 'https://adwords.google.com/api/adwords/cm/{{version}}',
+		'wsdl': 'https://adwords.google.com/api/adwords/cm/{{version}}/OfflineConversionAdjustmentFeedService?wsdl',
 		'methods': [
 			'mutate'
 		]
